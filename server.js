@@ -6,7 +6,14 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json());//middleware
+
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'https://beamish-meringue-1675ff.netlify.app/'
+}));
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
