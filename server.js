@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());//middleware
 
-const cors = require('cors');
+
 
 app.use(cors({
   origin: 'https://beamish-meringue-1675ff.netlify.app/'
