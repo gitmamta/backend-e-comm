@@ -5,13 +5,13 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+
 app.use(express.json());//middleware
 
 
 
 app.use(cors({
-  origin: 'https://beamish-meringue-1675ff.netlify.app/'
+  origin: 'https://beamish-meringue-1675ff.netlify.app'
 }));
 
 
@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('logins', userSchema);
 
 // Signup API example
-app.post('/api/signup', async (req, res) => {
+app.post('/api/forms', async (req, res) => {
   try {
     const newUser = new User(req.body);
     await newUser.save();
