@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const Address = require("./models/address");
 
 const app = express();
 
@@ -43,6 +44,18 @@ app.post('/api/forms', async (req, res) => {
     res.status(500).json({ error: 'Failed to save user' });
   }
 });
+app.post("/api/address", async (req, res) => {
+  try {
+    const addressData = req.body;
+    const newAddress = new Address(addressData);
+    const savedAddress = await newAddress.save();
+    res.status(201).json({ message: "Address saved", id: savedAddress._id });
+  } catch (error) {
+    console.error("Error saving address:", error);
+    res.status(500).json({ error: "Failed to save address" });
+  }
+});
+
 
 // Start server
 const port = process.env.PORT || 5000;
