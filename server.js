@@ -12,7 +12,7 @@ app.use(express.json());//middleware
 
 
 app.use(cors({
-  origin: 'https://beamish-meringue-1675ff.netlify.app'
+  origin: 'https://ecommerce-1675ff.netlify.app/'
 }));
 
 
