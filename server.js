@@ -12,7 +12,7 @@ app.use(express.json());//middleware
 
 
 app.use(cors({
-  origin: 'https://ecom-c.netlify.app/'
+  origin: 'https://ecom-c.netlify.app'
 }));
 
 
